@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Branding for Doctors — 2026</title>
+
+<style>
+:root {
+  --bg: #050b14;
+  --card: rgba(12, 27, 45, 0.78);
+  --cyan: #54e7ff;
+  --blue: #4d7cff;
+  --green: #55f0b0;
+  --white: #f5f8ff;
+  --muted: #9baac0;
+  --line: rgba(255,255,255,.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+}
+
+body {
+  perspective: 1400px;
+}
+
+/* BACKGROUND */
+.background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 20%, #102c53 0, transparent 32%),
+    radial-gradient(circle at 15% 80%, #083c42 0, transparent 30%),
+    #050b14;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(3px);
+  opacity: .30;
+  animation: float 12s ease-in-out infinite;
+}
+
+.orb.one {
+  width: 350px;
+  height: 350px;
+  background: #236dff;
+  right: -100px;
+  top: -100px;
+}
+
+.orb.two {
+  width: 280px;
+  height: 280px;
+  background: #00d9b0;
+  left: -100px;
+  bottom: -100px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  50% {
+    transform: translate(35px,25px) scale(1.08);
+  }
+}
+
+.grid-bg {
+  position: absolute;
+  inset: -30%;
+  opacity: .13;
+  background-image:
+    linear-gradient(var(--cyan) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cyan) 1px, transparent 1px);
+  background-size: 70px 70px;
+  transform: rotateX(65deg) translateY(25%);
+  mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent);
+}
+
+/* HEADER */
+header {
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+  position: relative;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,var(--cyan),var(--blue));
+  box-shadow: 0 0 30px #54e7ff44;
+}
+
+.logo::before {
+  content: "+";
+  font-size: 27px;
+  color: #04111e;
+  font-weight: 900;
+}
+
+.brand-name {
+  font-size: 16px;
+}
+
+.tag {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.accent {
+  background: linear-gradient(
+    90deg,
+    var(--cyan),
+    #9bcbff 55%,
+    var(--green)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.counter {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* MAIN */
+main {
+  height: calc(100vh - 152px);
+  display: grid;
+  place-items: center;
+  padding: 30px 5vw;
+  position: relative;
+}
+
+.deck {
+  position: relative;
+  width: min(1100px, 92vw);
+  height: min(620px, 72vh);
+  transform-style: preserve-3d;
+}
+
+/* SLIDES */
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: clamp(30px,5vw,68px);
+  border-radius: 34px;
+
+  border: 1px solid rgba(132,214,255,.16);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18,37,61,.90),
+      rgba(5,14,25,.78)
+    );
+
+  box-shadow:
+    0 40px 100px #0008,
+    inset 0 1px 0 #ffffff12;
+
+  backdrop-filter: blur(22px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    rotateY(18deg)
+    translateZ(-100px)
+    scale(.92);
+
+  transition:
+    opacity .55s ease,
+    transform .65s ease,
+    visibility .55s ease;
+
+  overflow: hidden;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  right: -170px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      #54e7ff18,
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform:
+    rotateY(0)
+    translateZ(0)
+    scale(1);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--cyan);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.eyebrow i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 14px var(--green);
+}
+
+h1 {
+  font-size: clamp(42px,7vw,82px);
+  line-height: .96;
+  letter-spacing: -.055em;
+  margin: 0 0 24px;
+  max-width: 850px;
+}
+
+h2 {
+  font-size: clamp(32px,4vw,52px);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  margin: 0 0 22px;
+}
+
+h3 {
+  margin: 0 0 8px;
+}
+
+p {
+  color: #bdc9d9;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+.hero-sub {
+  font-size: 20px;
+  max-width: 680px;
+}
+
+/* PILLS */
+.pill {
+  display: inline-block;
+  padding: 8px 13px;
+  margin: 5px 4px 0 0;
+
+  border: 1px solid #54e7ff33;
+  background: #54e7ff0d;
+  border-radius: 999px;
+
+  color: #ccefff;
+  font-size: 12px;
+}
+
+/* GRID */
+.grid2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 45px;
+  align-items: center;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+
+.card {
+  padding: 21px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #ffffff06;
+  box-shadow: 0 15px 35px #0002;
+}
+
+.card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.card span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* PATIENT SEARCH */
+.question {
+  font-size: clamp(25px,3.4vw,43px);
+  font-weight: 800;
+  line-height: 1.12;
+  max-width: 850px;
+  margin-bottom: 25px;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.answer {
+  padding: 13px 17px;
+  border-radius: 14px;
+  background: #ffffff07;
+  border: 1px solid var(--line);
+  color: #d8e3f2;
+}
+
+.answer.hot {
+  border-color: #54e7ff55;
+  background: #54e7ff0e;
+  color: var(--cyan);
+}
+
+/* TRUST CIRCLE */
+.trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 270px;
+  position: relative;
+}
+
+.ring {
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+
+  border: 1px solid #54e7ff55;
+
+  display: grid;
+  place-items: center;
+
+  box-shadow:
+    0 0 70px #54e7ff17,
+    inset 0 0 45px #54e7ff0b;
+
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.ring::before,
+.ring::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #55f0b033;
+}
+
+.ring::before {
+  width: 290px;
+  height: 290px;
+}
+
+.ring::after {
+  width: 340px;
+  height: 340px;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.035);
+    box-shadow:
+      0 0 100px #54e7ff24,
+      inset 0 0 60px #54e7ff12;
+  }
+}
+
+.ring b {
+  display: block;
+  font-size: 35px;
+  text-align: center;
+}
+
+.ring small {
+  display: block;
+  margin-top: 8px;
+  color: var(--cyan);
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: .15em;
+}
+
+/* FORMULA */
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.step {
+  min-width: 145px;
+  padding: 18px 20px;
+
+  text-align: center;
+
+  border-radius: 18px;
+  border: 1px solid #54e7ff22;
+
+  background:
+    linear-gradient(
+      145deg,
+      #142a44,
+      #091524
+    );
+}
+
+.step b {
+  display: block;
+  font-size: 18px;
+}
+
+.step small {
+  color: var(--muted);
+}
+
+.arrow {
+  color: var(--cyan);
+  font-size: 24px;
+}
+
+/* QUOTE */
+.quote {
+  font-size: clamp(28px,4.2vw,53px);
+  font-weight: 800;
+  line-height: 1.13;
+  max-width: 920px;
+  letter-spacing: -.035em;
+}
+
+.quote em {
+  color: var(--green);
+  font-style: normal;
+}
+
+/* NUMBER */
+.number {
+  position: absolute;
+  right: 45px;
+  top: 35px;
+
+  font-size: 120px;
+  font-weight: 900;
+  line-height: .8;
+
+  color: #54e7ff12;
+  letter-spacing: -.08em;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 76px;
+  padding: 0 5vw;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  z-index: 20;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(3,8,15,.9) 35%
+    );
+
+  backdrop-filter: blur(8px);
+}
+
+.progress {
+  flex: 1;
+  height: 3px;
+  background: #ffffff12;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar {
+  width: 10%;
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--green)
+    );
+
+  transition: width .4s;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff22;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+  border: 1px solid var(--line);
+
+  background: #ffffff08;
+  color: white;
+
+  cursor: pointer;
+  font-size: 18px;
+
+  transition: .2s;
+}
+
+.btn:hover {
+  background: #54e7ff18;
+  border-color: #54e7ff55;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media(max-width:760px) {
+
+  header {
+    height: 62px;
+    padding: 0 20px;
+  }
+
+  main {
+    height: calc(100vh - 138px);
+    padding: 20px;
+  }
+
+  .deck {
+    height: calc(100vh - 170px);
+    width: 94vw;
+  }
+
+  .slide {
+    padding: 30px 25px;
+    border-radius: 25px;
+  }
+
+  .grid2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow-y: auto;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .trust {
+    display: none;
+  }
+
+  .number {
+    font-size: 80px;
+    right: 20px;
+  }
+
+  .hero-sub,
+  p {
+    font-size: 15px;
+  }
+
+  footer {
+    padding: 0 20px;
+  }
+
+  .dots {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="grid-bg"></div>
+</div>
+
+<div class="app">
+
+<header>
+
+  <div class="brand">
+
+    <div class="logo"></div>
+
+    <div>
+      <div class="brand-name">
+        Doctor<span class="accent">Brand</span>
+      </div>
+
+      <div class="tag">
+        Personal Branding · 2026
+      </div>
+    </div>
+
+  </div>
+
+  <div class="counter">
+    <span id="number">01</span> / 10
+  </div>
+
+</header>
+
+
+<main>
+
+<section class="deck" id="deck">
+
+
+<!-- SLIDE 1 -->
+
+<article class="slide active">
+
+  <div class="eyebrow">
+    <i></i>
+    The new healthcare reality
+  </div>
+
+  <h1>
+    Personal branding is not a luxury.
+    <br>
+    <span class="accent">It’s survival.</span>
+  </h1>
+
+  <p class="hero-sub">
+    In 2026, patients don't just search for a hospital.
+    They search for a person they can trust.
+  </p>
+
+  <div>
+    <span class="pill">Visibility</span>
+    <span class="pill">Authenticity</span>
+    <span class="pill">Trust</span>
+    <span class="pill">Authority</span>
+  </div>
+
+</article>
+
+
+<!-- SLIDE 2 -->
+
+<article class="slide">
+
+  <span class="number">01</span>
+
+  <div class="eyebrow">
+    <i></i>
+    Why now?
+  </div>
+
+  <h2>
+    If you're not online,
+    <br>
+    <span class="accent">you may not exist.</span>
+  </h2>
+
+  <p>
+    People increasingly connect with real people—not just
+    institutions. Your digital presence is often the first
+    impression before a patient ever enters a hospital.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">👤</div>
+      <strong>Be visible</strong>
+      <span>
+        Let patients discover who you are
+        and what you stand for.
+      </span>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤝</div>
+      <strong>Be real</strong>
+      <span>
+        Authenticity creates a human connection
+        that advertising can't.
+      </span>
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 3 -->
+
+<article class="slide">
+
+  <span class="number">02</span>
+
+  <div class="eyebrow">
+    <i></i>
+    The patient journey
+  </div>
+
+  <h2>
+    A patient has fever.
+    <br>
+    What do they do first?
+  </h2>
+
+  <p>
+    They open Google. Suddenly, they're surrounded
+    by information, ads and choices.
+  </p>
+
+  <div class="answers">
+
+    <div class="answer">Hospital ad?</div>
+    <div class="answer">Doctor profile?</div>
+    <div class="answer">Ratings?</div>
+    <div class="answer">Reviews?</div>
+    <div class="answer">Experience?</div>
+    <div class="answer">Face?</div>
+
+    <div class="answer hot">
+      → Trust
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 4 -->
+
+<article class="slide">
+
+  <div class="grid2">
+
+    <div>
+
+      <div class="eyebrow">
+        <i></i>
+        The real decision factor
+      </div>
+
+      <h2>
+        The biggest emotion
+        in healthcare is
+        <span class="accent">fear.</span>
+      </h2>
+
+      <p>
+        When people are sick, they are afraid,
+        confused and uncertain.
+      </p>
+
+      <p>
+        They don't only search for information—
+        they search for reassurance.
+      </p>
+
+      <p>
+        <strong style="color:white">
+          The doctor who reduces fear can build
+          the strongest connection.
+        </strong>
+      </p>
+
+    </div>
+
+    <div class="trust">
+
+      <div class="ring">
+
+        <div>
+          <b>TRUST</b>
+          <small>REDUCES FEAR</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 5 -->
+
+<article class="slide">
+
+  <span class="number">03</span>
+
+  <div class="eyebrow">
+    <i></i>
+    Content strategy
+  </div>
+
+  <h2>
+    Educational videos aren't just marketing.
+    <br>
+    <span class="accent">They're reassurance.</span>
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <strong>Myth Busting</strong>
+      <span>
+        Challenge common misconceptions with
+        simple, evidence-based explanations.
+      </span>
+    </div>
+
+    <div class="card">
+      <strong>Clear Explanations</strong>
+      <span>
+        Turn complicated medical topics into
+        language patients understand.
+      </span>
+    </div>
+
+    <div class="card">
+      <strong>Preventive Advice</strong>
+      <span>
+        Help people know what they can do
+        before a problem becomes serious.
+      </span>
+    </div>
+
+    <div class="card">
+      <strong>Patient Questions</strong>
+      <span>
+        Answer the questions people are already
+        searching for online.
+      </span>
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 6 -->
+
+<article class="slide">
+
+  <div class="grid2">
+
+    <div>
+
+      <div class="eyebrow">
+        <i></i>
+        Give value first
+      </div>
+
+      <h2>
+        Free knowledge builds
+        <span class="accent">authority.</span>
+      </h2>
+
+      <p>
+        Every useful video is a small deposit
+        into the patient's trust account.
+      </p>
+
+      <div class="formula">
+
+        <div class="step">
+          <b>Knowledge</b>
+          <small>Share freely</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="step">
+          <b>Value</b>
+          <small>Help people</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="step">
+          <b>Trust</b>
+          <small>Reduce doubt</small>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card" style="padding:30px">
+
+      <div class="icon">💡</div>
+
+      <h3>Patient mindset</h3>
+
+      <p style="font-size:15px">
+        “This doctor explains things clearly.
+        They understand my problem.
+        I feel safer listening to them.”
+      </p>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 7 -->
+
+<article class="slide">
+
+  <span class="number">04</span>
+
+  <div class="eyebrow">
+    <i></i>
+    The brand shift
+  </div>
+
+  <h2>
+    The hospital is the institution.
+    <br>
+    <span class="accent">
+      The doctor is the connection.
+    </span>
+  </h2>
+
+  <div class="formula">
+
+    <div class="step">
+      <b>Hospital</b>
+      <small>Institution</small>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <b>Doctor</b>
+      <small>Human connection</small>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <b>Personal Brand</b>
+      <small>Trust</small>
+    </div>
+
+  </div>
+
+  <p>
+    Hospitals create awareness.
+    Doctors create relationships.
+    A strong personal brand gives the institution
+    a trusted human face.
+  </p>
+
+</article>
+
+
+<!-- SLIDE 8 -->
+
+<article class="slide">
+
+  <div class="grid2">
+
+    <div>
+
+      <div class="eyebrow">
+        <i></i>
+        Your digital reputation
+      </div>
+
+      <h2>
+        Build it before
+        <br>
+        <span class="accent">you need it.</span>
+      </h2>
+
+      <p>
+        Your digital presence should work like
+        reputation insurance.
+      </p>
+
+      <p>
+        When someone searches your name,
+        the right story should already be there.
+      </p>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <strong>Your face</strong>
+        <span>
+          Recognizable and authentic.
+        </span>
+      </div>
+
+      <div class="card">
+        <strong>Your expertise</strong>
+        <span>
+          Clear specialization and experience.
+        </span>
+      </div>
+
+      <div class="card">
+        <strong>Your voice</strong>
+        <span>
+          Consistent patient-friendly communication.
+        </span>
+      </div>
+
+      <div class="card">
+        <strong>Your proof</strong>
+        <span>
+          Reviews, education and credibility.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- SLIDE 9 -->
+
+<article class="slide">
+
+  <div class="eyebrow">
+    <i></i>
+    The formula
+  </div>
+
+  <h2>
+    Build a brand patients can
+    <span class="accent">believe in.</span>
+  </h2>
+
+  <div class="formula">
+
+    <div class="step">
+      <b>Visibility</b>
+      <small>Be discoverable</small>
+    </div>
+
+    <div class="arrow">+</div>
+
+    <div class="step">
+      <b>Authenticity</b>
+      <small>Be human</small>
+    </div>
+
+    <div class="arrow">+</div>
+
+    <div class="step">
+      <b>Education</b>
+      <small>Give value</small>
+    </div>
+
+    <div class="arrow">+</div>
+
+    <div class="step">
+      <b>Consistency</b>
+      <small>Stay present</small>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;max-width:none">
+
+    <strong style="font-size:23px;color:white">
+      = A trusted personal brand
+    </strong>
+
+  </p>
+
+</article>
+
+
+<!-- SLIDE 10 -->
+
+<article class="slide">
+
+  <div class="eyebrow">
+    <i></i>
+    The takeaway
+  </div>
+
+  <div class="quote">
+
+    “Your content may reach thousands of people,
+    but its real value is making
+    <em>one patient feel less afraid</em>
+    and more confident about their health.”
+
+  </div>
+
+  <p style="margin-top:30px">
+
+    In 2026, patients don't just choose hospitals.
+    <br>
+
+    <strong style="color:white">
+      They choose people they trust.
+    </strong>
+
+  </p>
+
+</article>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="progress">
+    <div class="bar" id="bar"></div>
+  </div>
+
+  <div class="dots" id="dots"></div>
+
+  <div class="nav">
+    <button class="btn" id="prev">←</button>
+    <button class="btn" id="next">→</button>
+  </div>
+
+</footer>
+
+</div>
+
+
+<script>
+
+const slides =
+  [...document.querySelectorAll(".slide")];
+
+const dots =
+  document.getElementById("dots");
+
+const number =
+  document.getElementById("number");
+
+const bar =
+  document.getElementById("bar");
+
+let current = 0;
+
+
+/* CREATE DOTS */
+
+slides.forEach((slide,index) => {
+
+  const dot =
+    document.createElement("span");
+
+  dot.className =
+    "dot" + (index === 0 ? " active" : "");
+
+  dot.onclick =
+    () => goTo(index);
+
+  dots.appendChild(dot);
+
+});
+
+
+/* CHANGE SLIDE */
+
+function goTo(index) {
+
+  current =
+    (index + slides.length) %
+    slides.length;
+
+  slides.forEach((slide,i) => {
+
+    slide.classList.toggle(
+      "active",
+      i === current
+    );
+
+  });
+
+  document
+    .querySelectorAll(".dot")
+    .forEach((dot,i) => {
+
+      dot.classList.toggle(
+        "active",
+        i === current
+      );
+
+    });
+
+  number.textContent =
+    String(current + 1).padStart(2,"0");
+
+  bar.style.width =
+    ((current + 1) /
+      slides.length * 100) + "%";
+}
+
+
+/* BUTTONS */
+
+document
+  .getElementById("next")
+  .onclick =
+  () => goTo(current + 1);
+
+document
+  .getElementById("prev")
+  .onclick =
+  () => goTo(current - 1);
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "ArrowRight" ||
+      event.key === " "
+    ) {
+      goTo(current + 1);
+    }
+
+    if (event.key === "ArrowLeft") {
+      goTo(current - 1);
+    }
+
+  }
+);
+
+
+/* TOUCH / SWIPE */
+
+let startX = 0;
+
+const deck =
+  document.getElementById("deck");
+
+deck.addEventListener(
+  "touchstart",
+  event => {
+
+    startX =
+      event.changedTouches[0].screenX;
+
+  }
+);
+
+deck.addEventListener(
+  "touchend",
+  event => {
+
+    const endX =
+      event.changedTouches[0].screenX;
+
+    const difference =
+      endX - startX;
+
+    if (Math.abs(difference) > 45) {
+
+      goTo(
+        current +
+        (difference < 0 ? 1 : -1)
+      );
+
+    }
+
+  }
+);
+
+
+/* START */
+
+goTo(0);
+
+</script>
+
+</body>
+</html>
+
